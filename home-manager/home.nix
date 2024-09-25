@@ -34,6 +34,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.zig
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -78,4 +79,19 @@
   # Enable neovim
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+
+  # Enable zsh
+  programs.zsh = {
+    enable = true;
+    enableVteIntegration = true;
+    autocd = true;
+    autosuggestion.enable = true;
+    shellAliases = {
+      ip = "ip --color=auto";
+      ls = "ls --color=auto";
+      grep ="grep --color";
+      rgrep ="rgrep -n --color";
+    };
+    syntaxHighlighting.enable = true;
+  };
 }
