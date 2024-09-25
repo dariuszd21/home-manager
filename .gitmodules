@@ -1,0 +1,3 @@
+[submodule "home-manager/dotfiles/nvim-config"]
+	path = home-manager/dotfiles/nvim-config
+	url = https://github.com/dariuszd21/nvim-config

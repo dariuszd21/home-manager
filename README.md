@@ -1,6 +1,6 @@
 ## Installation
 
 ```
-stow -t ~/ home-manager
+stow -t ~/.config .
 home-manager switch
 ```
