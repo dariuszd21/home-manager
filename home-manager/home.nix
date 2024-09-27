@@ -35,6 +35,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.zig
+    pkgs.fira-code-nerdfont
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -72,6 +73,9 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # enable fonts integration
+  fonts.fontconfig.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -221,4 +225,15 @@
       '';
     }];
   };
+
+  # WezTerm integration
+  programs.wezterm.enable = true;
+  programs.wezterm.extraConfig = ''
+    local config = {}
+
+    config.color_scheme = 'Catppuccin Macchiato'
+    config.font = wezterm.font("FiraCode Nerd Font")
+
+    return config
+  '';
 }
