@@ -286,4 +286,9 @@
     ];
   };
 
+  # Programs related to the sway sessions
+  # avizo - lightweight notification daemon
+  services.avizo.enable = true;
+  # To be updated to match catpuccin theme
+  # services.avizo.settings = {};
 }
