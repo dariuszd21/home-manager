@@ -231,9 +231,22 @@
   programs.wezterm.extraConfig = ''
     local config = {}
 
-    config.color_scheme = 'Catppuccin Macchiato'
+    config.color_scheme = "Catppuccin Macchiato"
     config.font = wezterm.font("FiraCode Nerd Font")
 
     return config
   '';
+
+  # Sway integration
+  wayland.windowManager.sway.enable = true;
+  wayland.windowManager.sway.systemd.enable = true;
+
+  # Enable swaylock
+  programs.swaylock.enable = true;
+
+  # Enable management of XDG base directories.
+  xdg.enable = true;
+
+  # make Home Manager work better on GNU/Linux distributions other than NixOS.
+  targets.genericLinux.enable = true;
 }
