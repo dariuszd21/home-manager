@@ -47,6 +47,7 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = dotfiles/nvim-config;
     ".config/bat/themes".source = dotfiles/bat/themes;
+".config/systemd/user/sway-session.target".source = dotfiles/systemd/user/sway-session.target;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
