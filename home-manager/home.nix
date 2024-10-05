@@ -239,7 +239,7 @@
   '';
 
   # Sway integration
-  wayland.windowManager.sway.enable = true;
+  # wayland.windowManager.sway.enable = true;
   wayland.windowManager.sway.systemd.enable = true;
 
   # Enable swaylock
@@ -275,7 +275,13 @@
   programs.bat = {
     enable = true;
     config = { theme = "Catppuccin Macchiato"; };
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batpipe batwatch ];
+    extraPackages = with pkgs.bat-extras; [
+      batdiff
+      batman
+      batgrep
+      batpipe
+      batwatch
+    ];
   };
 
 }
