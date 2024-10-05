@@ -46,6 +46,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = dotfiles/nvim-config;
+    ".config/bat/themes".source = dotfiles/bat/themes;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -269,4 +270,12 @@
   };
   xdg.portal.extraPortals =
     [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+
+  # Add bat with theming and extras
+  programs.bat = {
+    enable = true;
+    config = { theme = "Catppuccin Macchiato"; };
+    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batpipe batwatch ];
+  };
+
 }
