@@ -249,4 +249,10 @@
 
   # make Home Manager work better on GNU/Linux distributions other than NixOS.
   targets.genericLinux.enable = true;
+
+  # Enable rg (ripgrep)
+  programs.ripgrep.enable = true;
+
+  # Enable fd (user-friendly find replacement)
+  programs.fd.enable = true;
 }
