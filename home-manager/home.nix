@@ -227,6 +227,11 @@
     }];
   };
 
+  # It seems that GUI applications has problem with 24.04 LTS
+  # Below applications to be revisitted
+  # Enable alacritty
+  programs.alacritty.enable = true;
+
   # WezTerm integration
   programs.wezterm.enable = true;
   programs.wezterm.extraConfig = ''
@@ -239,11 +244,8 @@
   '';
 
   # Sway integration
-  # wayland.windowManager.sway.enable = true;
-  wayland.windowManager.sway.systemd.enable = true;
-
-  # Enable swaylock
-  programs.swaylock.enable = true;
+  # It seems that currently sway integration has to be done though host OS
+  # To revisit
 
   # Enable management of XDG base directories.
   xdg.enable = true;
