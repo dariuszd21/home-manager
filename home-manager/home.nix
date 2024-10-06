@@ -49,6 +49,8 @@
     ".config/bat/themes".source = dotfiles/bat/themes;
     ".config/systemd/user/sway-session.target".source =
       dotfiles/systemd/user/sway-session.target;
+    ".config/waybar/macchiato.css".source = dotfiles/waybar/macchiato.css;
+    ".config/waybar/style.css".source = dotfiles/waybar/style.css;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -330,7 +332,7 @@
           "spacing" = 5;
         };
         "clock" = {
-          "format" = " {:%d/%m  %I:%M %p}";
+          "format" = " {:%m/%d %I:%M%p}";
           "tooltip-format" = ''
             <big>{:%Y %B}</big>
             <tt><small>{calendar}</small></tt>'';
@@ -346,10 +348,8 @@
         "backlight" = {
           "format" = "{icon} {percent}%";
           "format-icons" = [ "" "" ];
-          # TODO: replace with avizo clients calls
-          "on-scroll-down" = "brightnessctl -c backlight set 5%";
-          "on-scroll-up" = "brightnessctl -c backlight set +5%";
-
+          "on-scroll-down" = "lightctl down";
+          "on-scroll-up" = "lightctl up";
         };
         "battery" = {
           "states" = {
@@ -384,8 +384,7 @@
             "car" = "";
             "default" = [ "" "" ];
           };
-          # TODO: replace with qt equivalent
-          "on-click" = "pavucontrol";
+          "on-click" = "pavucontrol-qt";
         };
       };
     };
