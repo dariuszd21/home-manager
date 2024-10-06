@@ -47,7 +47,8 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = dotfiles/nvim-config;
     ".config/bat/themes".source = dotfiles/bat/themes;
-".config/systemd/user/sway-session.target".source = dotfiles/systemd/user/sway-session.target;
+    ".config/systemd/user/sway-session.target".source =
+      dotfiles/systemd/user/sway-session.target;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -292,4 +293,101 @@
   services.avizo.enable = true;
   # To be updated to match catpuccin theme
   # services.avizo.settings = {};
+
+  # Status bar for wayland
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        mod = "dock";
+        height = 0;
+        "modules-left" =
+          [ "clock" "cpu" "memory" "sway/workspaces" "sway/mode" ];
+        "modules-center" = [ "sway/window" ];
+        "modules-right" = [
+          "tray"
+          "backlight"
+          "pulseaudio"
+          "battery"
+          "network"
+          "idle_inhibitor"
+        ];
+        "sway/workspaces" = { "disable-scroll" = true; };
+        "sway/window" = { "format" = "{}"; };
+
+        "idle_inhibitor" = {
+          "format" = "{icon} ";
+          "format-icons" = {
+            "activated" = "";
+            "deactivated" = "";
+          };
+        };
+        "tray" = {
+          "icon-size" = 14;
+          "spacing" = 5;
+        };
+        "clock" = {
+          "format" = " {:%d/%m  %I:%M %p}";
+          "tooltip-format" = ''
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>'';
+        };
+        "cpu" = {
+          "format" = " {usage}%";
+          "on-click" = "alacritty -e htop";
+        };
+        "memory" = {
+          "format" = " {}%";
+          "on-click" = "alacritty -e htop";
+        };
+        "backlight" = {
+          "format" = "{icon} {percent}%";
+          "format-icons" = [ "" "" ];
+          # TODO: replace with avizo clients calls
+          "on-scroll-down" = "brightnessctl -c backlight set 5%";
+          "on-scroll-up" = "brightnessctl -c backlight set +5%";
+
+        };
+        "battery" = {
+          "states" = {
+            "good" = 70;
+            "warning" = 30;
+            "critical" = 15;
+          };
+          "format" = "{icon}  {capacity}%";
+          # "format-good": "", // An empty format will hide the module
+          # "format-full": "",
+          "format-icons" = [ "" "" "" "" "" ];
+        };
+        "network" = {
+          # "interface": "wlp2s0", // (Optional) To force the use of this interface
+          "format" = "⚠ Disabled";
+          "format-wifi" = " {essid}";
+          "format-ethernet" = " {ifname}: {ipaddr}/{cidr}";
+          "format-disconnected" = "⚠ Disconnected";
+          "on-click" = "alacritty -e nmtui";
+        };
+        "pulseaudio" = {
+          "scroll-step" = 5;
+          "format" = "{icon} {volume}%";
+          "format-bluetooth" = "{icon} {volume}%";
+          "format-muted" = "muted ";
+          "format-icons" = {
+            "headphones" = "";
+            "handsfree" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
+            "default" = [ "" "" ];
+          };
+          # TODO: replace with qt equivalent
+          "on-click" = "pavucontrol";
+        };
+      };
+    };
+  };
 }
