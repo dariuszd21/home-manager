@@ -36,6 +36,9 @@
     # '')
     pkgs.zig
     pkgs.fira-code-nerdfont
+
+    # Wayland native snapshot editing tool
+    pkgs.swappy
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -51,6 +54,8 @@
       dotfiles/systemd/user/sway-session.target;
     ".config/waybar/macchiato.css".source = dotfiles/waybar/macchiato.css;
     ".config/waybar/style.css".source = dotfiles/waybar/style.css;
+
+    ".config/sway".source = dotfiles/sway;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

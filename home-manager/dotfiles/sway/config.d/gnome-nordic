@@ -1,0 +1,7 @@
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Nordic'
+    gsettings set $gnome-schema icon-theme 'Nordic-Folders'
+    gsettings set $gnome-schema font-name 'Fira Code Retina 10'
+}
+

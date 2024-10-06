@@ -1,0 +1,16 @@
+set $output-primary DP-3
+set $output-secondary eDP-1
+
+# workspace to displays
+workspace 1 output $output-secondary
+workspace 3 output $output-secondary
+workspace 5 output $output-secondary
+workspace 7 output $output-secondary
+workspace 9 output $output-secondary
+
+workspace 2 output $output-primary
+workspace 4 output $output-primary
+workspace 6 output $output-primary
+workspace 8 output $output-primary
+workspace 10 output $output-primary
+
