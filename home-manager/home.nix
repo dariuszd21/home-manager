@@ -38,6 +38,7 @@
     pkgs.fira-code-nerdfont
 
     # Wayland native snapshot editing tool
+    pkgs.grim
     pkgs.swappy
   ];
 
@@ -56,6 +57,7 @@
     ".config/waybar/style.css".source = dotfiles/waybar/style.css;
 
     ".config/sway".source = dotfiles/sway;
+    ".config/swaync/style.css".source = dotfiles/swaync/style.css;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -418,4 +420,7 @@
       };
     };
   };
+
+  # Add notification daemon
+  services.swaync = { enable = true; };
 }
