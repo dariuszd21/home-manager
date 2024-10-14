@@ -59,7 +59,6 @@
     ".config/waybar/style.css".source = dotfiles/waybar/style.css;
 
     ".config/sway".source = dotfiles/sway;
-    ".config/swaync/style.css".source = dotfiles/swaync/style.css;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -94,8 +93,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports =
-    [ ./programs/zsh.nix ./programs/neovim.nix ./programs/starship.nix ];
+  imports = [
+    ./programs/zsh.nix
+    ./programs/neovim.nix
+    ./programs/starship.nix
+    ./services/swaync.nix
+  ];
 
   # fzf integration
   programs.fzf.enable = true;
@@ -345,7 +348,4 @@
       };
     };
   };
-
-  # Add notification daemon
-  services.swaync = { enable = true; };
 }
