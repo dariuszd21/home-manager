@@ -94,27 +94,13 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./programs/fzf.nix
     ./programs/zsh.nix
     ./programs/neovim.nix
     ./programs/starship.nix
     ./programs/zoxide.nix
     ./services/swaync.nix
   ];
-
-  # fzf integration
-  programs.fzf.enable = true;
-  programs.fzf.colors = {
-    "spinner" = "#f4dbd6";
-    hl = "#ed8796";
-    fg = "#cad3f5";
-    header = "#ed8796";
-    info = "#c6a0f6";
-    pointer = "#f4dbd6";
-    marker = "#f4dbd6";
-    "fg+" = "#cad3f5";
-    prompt = "#c6a0f6";
-    "hl+" = "#ed8798";
-  };
 
   # tmux integration
   programs.tmux.enable = true;
