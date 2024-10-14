@@ -95,8 +95,10 @@
   imports = [
     ./programs/alacritty.nix
     ./programs/bat.nix
+    ./programs/fd.nix
     ./programs/fzf.nix
     ./programs/neovim.nix
+    ./programs/ripgrep.nix
     ./programs/starship.nix
     ./programs/tmux.nix
     ./programs/zoxide.nix
@@ -124,12 +126,6 @@
 
   # make Home Manager work better on GNU/Linux distributions other than NixOS.
   targets.genericLinux.enable = true;
-
-  # Enable rg (ripgrep)
-  programs.ripgrep.enable = true;
-
-  # Enable fd (user-friendly find replacement)
-  programs.fd.enable = true;
 
   # Enable portals support
   xdg.portal.enable = true;
