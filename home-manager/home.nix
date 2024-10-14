@@ -94,6 +94,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./programs/alacritty.nix
     ./programs/fzf.nix
     ./programs/neovim.nix
     ./programs/starship.nix
@@ -102,11 +103,6 @@
     ./programs/zsh.nix
     ./services/swaync.nix
   ];
-
-  # It seems that GUI applications has problem with 24.04 LTS
-  # Below applications to be revisitted
-  # Enable alacritty
-  programs.alacritty.enable = true;
 
   # WezTerm integration
   programs.wezterm.enable = true;
