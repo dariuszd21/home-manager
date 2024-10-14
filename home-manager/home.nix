@@ -52,7 +52,6 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = dotfiles/nvim-config;
-    ".config/bat/themes".source = dotfiles/bat/themes;
     ".config/systemd/user/sway-session.target".source =
       dotfiles/systemd/user/sway-session.target;
     ".config/waybar/macchiato.css".source = dotfiles/waybar/macchiato.css;
@@ -95,6 +94,7 @@
 
   imports = [
     ./programs/alacritty.nix
+    ./programs/bat.nix
     ./programs/fzf.nix
     ./programs/neovim.nix
     ./programs/starship.nix
@@ -144,20 +144,6 @@
   };
   xdg.portal.extraPortals =
     [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
-
-  # Add bat with theming and extras
-  programs.bat = {
-    enable = true;
-    config = { theme = "Catppuccin Macchiato"; };
-    extraPackages = with pkgs.bat-extras; [
-      batdiff
-      batman
-      batgrep
-      batpipe
-      batwatch
-    ];
-  };
-
   # Programs related to the sway sessions
   # avizo - lightweight notification daemon
   services.avizo.enable = true;
