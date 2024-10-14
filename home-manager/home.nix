@@ -97,6 +97,7 @@
     ./programs/zsh.nix
     ./programs/neovim.nix
     ./programs/starship.nix
+    ./programs/zoxide.nix
     ./services/swaync.nix
   ];
 
