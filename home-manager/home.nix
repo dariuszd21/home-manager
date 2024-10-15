@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -96,6 +95,7 @@
     ./programs/alacritty.nix
     ./programs/bat.nix
     ./programs/fd.nix
+    ./programs/fuzzel.nix
     ./programs/fzf.nix
     ./programs/neovim.nix
     ./programs/ripgrep.nix
@@ -236,27 +236,4 @@
     };
   };
 
-  # Add application launcher for SwayWM
-  programs.fuzzel = {
-    enable = true;
-    settings = {
-      main = {
-        terminal = "${pkgs.wezterm}/bin/wezterm";
-        layer = "top";
-      };
-      colors = {
-        background = "24273add";
-        text = "cad3f5ff";
-        prompt = "b8c0e0ff";
-        placeholder = "8087a2ff";
-        input = "cad3f5ff";
-        match = "b7bdf8ff";
-        selection = "5b6078ff";
-        selection-text = "cad3f5ff";
-        selection-match = "b7bdf8ff";
-        counter = "8087a2ff";
-        border = "b7bdf8ff";
-      };
-    };
-  };
 }
