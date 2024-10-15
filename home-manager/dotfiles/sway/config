@@ -225,12 +225,12 @@ bindsym $mod+r mode "resize"
 #
 # Custom keybindings:
 #
-bindsym XF86AudioRaiseVolume exec volumectl -u up
-bindsym XF86AudioLowerVolume exec volumectl -u down
-bindsym XF86AudioMute exec volumectl toggle-mute
-bindsym XF86AudioMicMute exec volumectl -m toggle-mute
-bindsym XF86MonBrightnessUp exec lightctl up
-bindsym XF86MonBrightnessDown exec lightctl down
+bindsym XF86AudioRaiseVolume exec volumectl -d -u up
+bindsym XF86AudioLowerVolume exec volumectl -d -u down
+bindsym XF86AudioMute exec volumectl -d toggle-mute
+bindsym XF86AudioMicMute exec volumectl -d -m toggle-mute
+bindsym XF86MonBrightnessUp exec lightctl -d up
+bindsym XF86MonBrightnessDown exec lightctl -d down
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next

@@ -103,6 +103,7 @@
     ./programs/tmux.nix
     ./programs/zoxide.nix
     ./programs/zsh.nix
+    ./services/avizo.nix
     ./services/swaync.nix
   ];
 
@@ -140,11 +141,6 @@
   };
   xdg.portal.extraPortals =
     [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
-  # Programs related to the sway sessions
-  # avizo - lightweight notification daemon
-  services.avizo.enable = true;
-  # To be updated to match catpuccin theme
-  # services.avizo.settings = {};
 
   # Status bar for wayland
   programs.waybar = {
