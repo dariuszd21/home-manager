@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -53,9 +54,6 @@
     ".config/nvim".source = dotfiles/nvim-config;
     ".config/systemd/user/sway-session.target".source =
       dotfiles/systemd/user/sway-session.target;
-    ".config/waybar/macchiato.css".source = dotfiles/waybar/macchiato.css;
-    ".config/waybar/style.css".source = dotfiles/waybar/style.css;
-
     ".config/sway".source = dotfiles/sway;
 
     # # You can also set the file content immediately.
@@ -101,6 +99,7 @@
     ./programs/ripgrep.nix
     ./programs/starship.nix
     ./programs/tmux.nix
+    ./programs/waybar.nix
     ./programs/zoxide.nix
     ./programs/zsh.nix
     ./services/avizo.nix
@@ -108,15 +107,17 @@
   ];
 
   # WezTerm integration
-  programs.wezterm.enable = true;
-  programs.wezterm.extraConfig = ''
-    local config = {}
+  programs.wezterm = {
+    enable = true;
+    extraConfig = ''
+      local config = {}
 
-    config.color_scheme = "Catppuccin Macchiato"
-    config.font = wezterm.font("FiraCode Nerd Font")
+      config.color_scheme = "Catppuccin Macchiato"
+      config.font = wezterm.font("FiraCode Nerd Font")
 
-    return config
-  '';
+      return config
+    '';
+  };
 
   # Sway integration
   # It seems that currently sway integration has to be done though host OS
@@ -141,99 +142,5 @@
   };
   xdg.portal.extraPortals =
     [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
-
-  # Status bar for wayland
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-    settings = {
-      mainBar = {
-        layer = "top";
-        position = "top";
-        mod = "dock";
-        height = 0;
-        "modules-left" =
-          [ "clock" "cpu" "memory" "sway/workspaces" "sway/mode" ];
-        "modules-center" = [ "sway/window" ];
-        "modules-right" = [
-          "tray"
-          "backlight"
-          "pulseaudio"
-          "battery"
-          "network"
-          "idle_inhibitor"
-        ];
-        "sway/workspaces" = { "disable-scroll" = true; };
-        "sway/window" = { "format" = "{}"; };
-
-        "idle_inhibitor" = {
-          "format" = "{icon} ";
-          "format-icons" = {
-            "activated" = "";
-            "deactivated" = "";
-          };
-        };
-        "tray" = {
-          "icon-size" = 14;
-          "spacing" = 5;
-        };
-        "clock" = {
-          "format" = " {:%m/%d %I:%M%p}";
-          "tooltip-format" = ''
-            <big>{:%Y %B}</big>
-            <tt><small>{calendar}</small></tt>'';
-        };
-        "cpu" = {
-          "format" = " {usage}%";
-          "on-click" = "alacritty -e htop";
-        };
-        "memory" = {
-          "format" = " {}%";
-          "on-click" = "alacritty -e htop";
-        };
-        "backlight" = {
-          "format" = "{icon} {percent}%";
-          "format-icons" = [ "" "" ];
-          "on-scroll-down" = "lightctl down";
-          "on-scroll-up" = "lightctl up";
-        };
-        "battery" = {
-          "states" = {
-            "good" = 70;
-            "warning" = 30;
-            "critical" = 15;
-          };
-          "format" = "{icon}  {capacity}%";
-          # "format-good": "", // An empty format will hide the module
-          # "format-full": "",
-          "format-icons" = [ "" "" "" "" "" ];
-        };
-        "network" = {
-          # "interface": "wlp2s0", // (Optional) To force the use of this interface
-          "format" = "⚠ Disabled";
-          "format-wifi" = " {essid}";
-          "format-ethernet" = " {ifname}: {ipaddr}/{cidr}";
-          "format-disconnected" = "⚠ Disconnected";
-          "on-click" = "alacritty -e nmtui";
-        };
-        "pulseaudio" = {
-          "scroll-step" = 5;
-          "format" = "{icon} {volume}%";
-          "format-bluetooth" = "{icon} {volume}%";
-          "format-muted" = "muted ";
-          "format-icons" = {
-            "headphones" = "";
-            "handsfree" = "";
-            "headset" = "";
-            "phone" = "";
-            "portable" = "";
-            "car" = "";
-            "default" = [ "" "" ];
-          };
-          "on-click" = "pavucontrol-qt";
-        };
-      };
-    };
-  };
 
 }
