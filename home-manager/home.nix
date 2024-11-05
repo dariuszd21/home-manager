@@ -52,8 +52,6 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = dotfiles/nvim-config;
-    ".config/systemd/user/sway-session.target".source =
-      dotfiles/systemd/user/sway-session.target;
     ".config/sway".source = dotfiles/sway;
 
     # # You can also set the file content immediately.
@@ -104,6 +102,7 @@
     ./programs/zsh.nix
     ./services/avizo.nix
     ./services/swaync.nix
+    ./wayland/window_manager_sway.nix
   ];
 
   # WezTerm integration
