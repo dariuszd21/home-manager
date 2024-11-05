@@ -7,7 +7,7 @@ in {
     enable = true;
     package = (nixGLWrap pkgs.alacritty);
     settings = {
-      live_config_reload = true;
+      general = { live_config_reload = true; };
       colors = {
         bright = {
           black = "#4c566a";
@@ -80,7 +80,7 @@ in {
           style = "Retina";
         };
       };
-      shell = { program = "${pkgs.zsh}/bin/zsh"; };
+      terminal = { shell = { program = "${pkgs.zsh}/bin/zsh"; }; };
       window = {
         opacity = 0.9;
         padding = {
