@@ -41,6 +41,8 @@
     grim
     swappy
 
+    # TODO: replace with new module
+    # https://nix-community.github.io/home-manager/options.xhtml#opt-nixGL.packages
     nixgl.nixGLMesa
   ];
 
