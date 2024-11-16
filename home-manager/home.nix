@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -41,9 +41,6 @@
     grim
     swappy
 
-    # TODO: replace with new module
-    # https://nix-community.github.io/home-manager/options.xhtml#opt-nixGL.packages
-    nixgl.nixGLMesa
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -90,6 +87,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./gpu/nixgl.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
     ./programs/fd.nix

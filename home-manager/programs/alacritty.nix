@@ -1,11 +1,10 @@
 { config, pkgs, lib, ... }:
 
-let nixGLWrap = import ../nixGLWrap.nix { inherit pkgs; };
-in {
+{
   # alacritty integration
   programs.alacritty = {
     enable = true;
-    package = (nixGLWrap pkgs.alacritty);
+    package = config.lib.nixGL.wrap pkgs.alacritty;
     settings = {
       general = { live_config_reload = true; };
       colors = {
