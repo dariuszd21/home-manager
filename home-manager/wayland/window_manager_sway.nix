@@ -1,10 +1,11 @@
 { config, pkgs, lib, ... }:
 
-let nixGLWrap = import ../nixGLWrap.nix { inherit pkgs; };
-in {
+{
   # sway integration
-   wayland.windowManager.sway = {
+  wayland.windowManager.sway = {
     enable = true;
-    package = (nixGLWrap pkgs.sway);
+    package = config.lib.nixGL.wrap pkgs.sway;
+
+    swaynag = { enable = true; };
   };
 }
