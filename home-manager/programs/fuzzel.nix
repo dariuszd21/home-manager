@@ -8,6 +8,7 @@
       main = {
         terminal = "${pkgs.alacritty}/bin/alacritty";
         layer = "top";
+        show-actions = "yes";
       };
       colors = {
         background = "24273add";
