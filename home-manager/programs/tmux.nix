@@ -44,7 +44,7 @@
         set -g @catppuccin_status_connect_separator "no"
 
         # Replace directories inside home with ~/ to shorten path
-        set -g @catppuccin_directory_text "#(~/git/kubuntu_tweaks/tmux_scripts/shorten_path.py #{pane_current_path})"
+        set -g @catppuccin_directory_text "#(${config.home.homeDirectory}/.config/tmux/scripts/shorten_path.py #{pane_current_path})"
 
         # Change application background to yellow to distinguish from directory
         set -g @catppuccin_application_color "#{thm_yellow}"
