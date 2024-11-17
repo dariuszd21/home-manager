@@ -6,7 +6,7 @@
     enable = true;
     settings = {
       main = {
-        terminal = "${pkgs.alacritty}/bin/alacritty";
+        terminal = "alacritty";
         layer = "top";
         show-actions = "yes";
       };
