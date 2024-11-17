@@ -94,6 +94,7 @@
     ./programs/fuzzel.nix
     ./programs/fzf.nix
     ./programs/neovim.nix
+    ./programs/pyenv.nix
     ./programs/ripgrep.nix
     ./programs/starship.nix
     ./programs/tmux.nix
