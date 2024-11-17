@@ -6,6 +6,7 @@
     enable = true;
     enableVteIntegration = true;
     autocd = true;
+    history.append = true;
     autosuggestion = {
       enable = true;
       highlight = "fg=#b7bdf8,bold,underline";
@@ -89,11 +90,15 @@
       };
     };
     envExtra = ''
+      zstyle ':completion:*' menu select
       if [ -e "$HOME/.cargo/env" ]; then
         . "$HOME/.cargo/env"
       fi
       #export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin
     '';
+    # initExtraBeforeCompInit = ''
+    #   fpath=($fpath ~/.zsh/completions)
+    # '';
   };
 }
 
