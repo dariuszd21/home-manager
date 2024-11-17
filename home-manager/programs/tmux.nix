@@ -13,6 +13,9 @@
       bind-key C-a last-window
       bind-key A command-prompt -I "#W" "rename-window '%%'"
 
+      # reload configuration hotkey
+      bind R source-file ${config.home.homeDirectory}/.config/tmux/tmux.conf
+
       # open new pane and windows in current directory
       bind  %  split-window -h -c "#{pane_current_path}"
       bind '"' split-window -v -c "#{pane_current_path}"
