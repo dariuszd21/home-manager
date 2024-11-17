@@ -7,7 +7,8 @@
     enable = true;
     settings = {
       default = {
-        image-base-dir = "~/.local/share/avizo/images";
+        image-base-dir =
+          "${config.home.homeDirectory}/.local/share/avizo/images";
         background = "rgba(36, 39, 58, 1)";
         border-color = "rgba(110, 115, 141, 1)";
         bar-fg-color = "rgba(202, 211, 245, 1)";

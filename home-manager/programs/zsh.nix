@@ -16,6 +16,7 @@
       ls = "ls --color=auto";
       grep = "grep --color";
       rgrep = "rgrep -n --color";
+      nvim-playground = "NVIM_APPNAME=nvim-playground nvim";
     };
     syntaxHighlighting = {
       enable = true;

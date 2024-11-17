@@ -52,8 +52,12 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/nvim".source = dotfiles/nvim-config;
-    ".config/sway".source = dotfiles/sway;
+    ".config/nvim".source = ./dotfiles/nvim-config;
+    ".config/nvim-playground" = {
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/git/home-manager/home-manager/dotfiles/nvim-config";
+    };
+    ".config/sway".source = ./dotfiles/sway;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
