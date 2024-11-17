@@ -94,7 +94,9 @@
       if [ -e "$HOME/.cargo/env" ]; then
         . "$HOME/.cargo/env"
       fi
-      #export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin
+      export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin
+      export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
     '';
     # initExtraBeforeCompInit = ''
     #   fpath=($fpath ~/.zsh/completions)

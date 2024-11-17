@@ -41,6 +41,8 @@
     grim
     swappy
 
+    # A generator for LS_COLORS with support for multiple color themes
+    vivid
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -90,6 +92,7 @@
     ./gpu/nixgl.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
+    ./programs/eza.nix
     ./programs/fd.nix
     ./programs/fuzzel.nix
     ./programs/fzf.nix
