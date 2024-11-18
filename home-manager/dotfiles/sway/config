@@ -225,16 +225,21 @@ bindsym $mod+r mode "resize"
 #
 # Custom keybindings:
 #
-bindsym XF86AudioRaiseVolume exec volumectl -d -u up
-bindsym XF86AudioLowerVolume exec volumectl -d -u down
-bindsym XF86AudioMute exec volumectl -d toggle-mute
-bindsym XF86AudioMicMute exec volumectl -d -m toggle-mute
-bindsym XF86MonBrightnessUp exec lightctl -d up
-bindsym XF86MonBrightnessDown exec lightctl -d down
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
+bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume lower
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Capslock / NumLock / ScrollLock notifications
+bindsym --release Caps_Lock exec swayosd-client --caps-lock
+bindsym --release Num_Lock exec swayosd-client --num-lock
+bindsym --release Scroll_Lock exec swayosd-client --scroll-lock
 
 assign [instance="^slack$"] 3
 assign [app_id="Slack"] 3

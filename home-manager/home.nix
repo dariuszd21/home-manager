@@ -58,6 +58,7 @@
         "${config.home.homeDirectory}/git/home-manager/home-manager/dotfiles/nvim-config";
     };
     ".config/sway".source = ./dotfiles/sway;
+    ".config/swayosd/style.css".source = ./dotfiles/swayosd/style.css;
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
 
     # # You can also set the file content immediately.
@@ -110,8 +111,8 @@
     ./programs/waybar.nix
     ./programs/zoxide.nix
     ./programs/zsh.nix
-    ./services/avizo.nix
     ./services/swaync.nix
+    ./services/swayosd.nix
     ./wayland/window_manager_sway.nix
   ];
 

@@ -58,8 +58,8 @@
         "backlight" = {
           "format" = "{icon} {percent}%";
           "format-icons" = [ "" "" ];
-          "on-scroll-down" = "lightctl down";
-          "on-scroll-up" = "lightctl up";
+          "on-scroll-down" = "swayosd-client --brightness raise";
+          "on-scroll-up" = "swayosd-client --brightness lower";
         };
         "battery" = {
           "states" = {
