@@ -58,7 +58,6 @@
         "${config.home.homeDirectory}/git/home-manager/home-manager/dotfiles/nvim-config";
     };
     ".config/sway".source = ./dotfiles/sway;
-    ".config/swayosd/style.css".source = ./dotfiles/swayosd/style.css;
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
     ".local/share/backgrounds/Toronto.jpg".source = ./assets/backgrounds/Toronto.jpg;
 
