@@ -37,10 +37,6 @@
     zig
     fira-code-nerdfont
 
-    # Wayland native snapshot editing tool
-    grim
-    swappy
-
     # A generator for LS_COLORS with support for multiple color themes
     vivid
   ];

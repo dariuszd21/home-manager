@@ -9,6 +9,14 @@
     swaynag = { enable = true; };
   };
 
+  home.packages = with pkgs; [
+    # Wayland native snapshot editing tool
+    grim
+    swappy
+    slurp
+    wl-clipboard
+  ];
+
   # Swaylock may be problematic due to pam configuration
   # see https://github.com/hyprwm/hyprlock/issues/333
   programs.swaylock = {

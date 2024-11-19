@@ -42,7 +42,8 @@ output eDP-1 resolution 1920x1080@60Hz position 0,0
 #
 # Screen capture
 #
-set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
+set $screenshot capture
+
 mode "$screenshot" {
     bindsym 1 exec 'grim -g "$(slurp)" ~/Downloads/screenshot_$(date +"%Y%m%d%H%M%S").png', mode "default"
     bindsym 2 exec 'grim ~/Downloads/screenshot_$(date +"%Y%m%d%H%M%S").png', mode "default"
@@ -57,6 +58,8 @@ mode "$screenshot" {
 }
 
 bindsym $mod+Print mode "$screenshot"
+set $screenshot_text 1 - window, 2 - screen, 3 - window clipboard, 4 - screen clipboard, 5 - swappy
+bindsym --release $mod+Print exec swayosd-client --custom-message "$screenshot_text"
 
 exec swayidle -w \
 	timeout 1800 'swaylock' \
