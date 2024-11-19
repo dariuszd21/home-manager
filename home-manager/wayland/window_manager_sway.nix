@@ -1,6 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  home.file = {
+    ".config/sway".source = ../dotfiles/sway;
+    ".local/share/backgrounds/Toronto.jpg".source =
+      ../assets/backgrounds/Toronto.jpg;
+  };
+
   # sway integration
   wayland.windowManager.sway = {
     enable = true;

@@ -53,9 +53,7 @@
       source = config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/git/home-manager/home-manager/dotfiles/nvim-config";
     };
-    ".config/sway".source = ./dotfiles/sway;
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
-    ".local/share/backgrounds/Toronto.jpg".source = ./assets/backgrounds/Toronto.jpg;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
