@@ -60,6 +60,7 @@
     ".config/sway".source = ./dotfiles/sway;
     ".config/swayosd/style.css".source = ./dotfiles/swayosd/style.css;
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
+    ".local/share/backgrounds/Toronto.jpg".source = ./assets/backgrounds/Toronto.jpg;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
