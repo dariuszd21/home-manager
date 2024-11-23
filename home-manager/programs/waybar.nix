@@ -115,8 +115,10 @@
           "return-type" = "json";
           "exec-if" = "which ${pkgs.swaynotificationcenter}/bin/swaync-client";
           "exec" = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
-          "on-click" = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
-          "on-click-right" = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+          "on-click" =
+            "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+          "on-click-right" =
+            "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
           "escape" = true;
         };
       };
