@@ -20,6 +20,9 @@ stow -t ~/.config .
 ```
 ### __*Optional*__ add a separate BTRFS subvolume for `Nix` store
 
+> Important, if you have a separate /nix partition you need x-initrd.mount
+> option in your fstab
+
 ```shell
 # mount root btrfs filesystem
 sudo mount /dev/mapper/luks-<your-decrypted-volume-id> /tmp/root/
@@ -28,7 +31,7 @@ sudo btrfs subvolume create /tmp/root/@nix
 sudo mkdir /nix
 # edit /etc/fstab and add /@nix subvolume mount entry
 # add `ssd` options for better performance on flash drives
-#  btrfs  subvol=/@nix,space_cache=v2,compress=zstd:1,discard=async,ssd,noatime,autodefrag 0 0
+#  btrfs  subvol=/@nix,space_cache=v2,compress=zstd:1,discard=async,ssd,noatime,autodefrag,x-initrd.mount 0 0
 ```
 
 ### Installing Nix
