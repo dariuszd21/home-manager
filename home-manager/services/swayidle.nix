@@ -2,9 +2,7 @@
 
 {
   # Add it also to PATH
-  home.packages = with pkgs; [
-    swayidle
-  ];
+  home.packages = with pkgs; [ swayidle ];
 
   # swayidle - idle manager for wayland
   services.swayidle = {

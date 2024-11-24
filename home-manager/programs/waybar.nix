@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+
+  # add pavucontrol-qt for the bar
+  home.packages = with pkgs; [ lxqt.pavucontrol-qt ];
+
   home.file = {
     ".config/waybar/macchiato.css".source = ../dotfiles/waybar/macchiato.css;
     ".config/waybar/style.css".source = ../dotfiles/waybar/style.css;
@@ -62,8 +66,10 @@
         "backlight" = {
           "format" = "{icon} {percent}%";
           "format-icons" = [ "" "" ];
-          "on-scroll-down" = "swayosd-client --brightness raise";
-          "on-scroll-up" = "swayosd-client --brightness lower";
+          "on-scroll-down" =
+            "${pkgs.swayosd}/bin/swayosd-client --brightness raise";
+          "on-scroll-up" =
+            "${pkgs.swayosd}/bin/swayosd-client --brightness lower";
         };
         "battery" = {
           "states" = {
@@ -98,7 +104,7 @@
             "car" = "";
             "default" = [ "" "" ];
           };
-          "on-click" = "pavucontrol-qt";
+          "on-click" = "${pkgs.lxqt.pavucontrol-qt}/bin/pavucontrol-qt";
         };
         "custom/notification" = {
           "tooltip" = false;
