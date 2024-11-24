@@ -1,4 +1,4 @@
-set $output-primary DP-3
+set $output-primary DP-2
 set $output-secondary eDP-1
 
 # workspace to displays
