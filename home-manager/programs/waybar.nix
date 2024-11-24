@@ -57,11 +57,13 @@
         };
         "cpu" = {
           "format" = " {usage}%";
-          "on-click" = "alacritty -e htop";
+          "on-click" =
+            "${config.lib.nixGL.wrap pkgs.alacritty}/bin/alacritty -e htop";
         };
         "memory" = {
           "format" = " {}%";
-          "on-click" = "alacritty -e htop";
+          "on-click" =
+            "${config.lib.nixGL.wrap pkgs.alacritty}/bin/alacritty -e htop";
         };
         "backlight" = {
           "format" = "{icon} {percent}%";
@@ -88,7 +90,8 @@
           "format-wifi" = " {essid}";
           "format-ethernet" = " {ifname}: {ipaddr}/{cidr}";
           "format-disconnected" = "⚠ Disconnected";
-          "on-click" = "alacritty -e nmtui";
+          "on-click" =
+            "${config.lib.nixGL.wrap pkgs.alacritty}/bin/alacritty -e nmtui";
         };
         "pulseaudio" = {
           "scroll-step" = 5;
