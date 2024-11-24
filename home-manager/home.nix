@@ -105,6 +105,7 @@
     ./programs/waybar.nix
     ./programs/zoxide.nix
     ./programs/zsh.nix
+    ./services/swayidle.nix
     ./services/swaync.nix
     ./services/swayosd.nix
     ./wayland/window_manager_sway.nix
