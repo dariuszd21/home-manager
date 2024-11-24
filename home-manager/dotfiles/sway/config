@@ -263,5 +263,7 @@ include /etc/sway/config.d/*
 # user config directory
 include $HOME/.config/sway/config.d/*
 
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XAUTHORITY SWAYSOCK
+
 # Launch sway binding for `graphical-session.target`
 exec_always systemctl --user start sway-session.target
