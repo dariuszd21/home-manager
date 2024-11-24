@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  # Add it also to PATH
+  home.packages = with pkgs; [
+    swayidle
+  ];
+
   # swayidle - idle manager for wayland
   services.swayidle = {
     enable = true;
