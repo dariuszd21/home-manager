@@ -106,6 +106,7 @@
     ./programs/zoxide.nix
     ./programs/zsh.nix
     ./services/gnome-keyring.nix
+    ./services/ssh-agent.nix
     ./services/swayidle.nix
     ./services/swaync.nix
     ./services/swayosd.nix
