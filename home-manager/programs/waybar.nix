@@ -67,9 +67,9 @@
           "format" = "{icon} {percent}%";
           "format-icons" = [ "" "" ];
           "on-scroll-down" =
-            "${pkgs.swayosd}/bin/swayosd-client --brightness raise";
-          "on-scroll-up" =
             "${pkgs.swayosd}/bin/swayosd-client --brightness lower";
+          "on-scroll-up" =
+            "${pkgs.swayosd}/bin/swayosd-client --brightness raise";
         };
         "battery" = {
           "states" = {
