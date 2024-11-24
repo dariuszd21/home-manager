@@ -43,6 +43,27 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 nix run home-manager/master -- switch
 ```
 
+> If there are any conflicts with existing files you may need to rename them before installing
+> `home-manager`.
+
+### Reboot & enjoy
+
+> In case of `nix-daemon.service` not working you may to manually enable it by typing
+
+```shell
+sudo systemctl enable --now nix-daemon.service
+```
+
+## Tips & Tricks
+
+### Disable nixbld users from `SDDM`
+
+> Add /etc/sddm.conf.d/uid.conf with the following configuration
+
+```conf
+[Users]
+HideShells=/usr/bin/nologin,/sbin/nologin,/bin/false,/usr/bin/git-shell
+```
 
 ## Housekeeping
 
