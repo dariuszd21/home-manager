@@ -56,6 +56,19 @@ sudo systemctl enable --now nix-daemon.service
 
 ## Tips & Tricks
 
+### Create desktop entry for Sway
+
+> Place it under /usr/share/wayland-sessions/sway-nix.desktop
+> to avoid collision with system Sway (if installed or may be installed)
+
+```conf
+[Desktop Entry]
+Name=Sway (Nix)
+Comment=An i3-compatible Wayland compositor
+Exec=sway
+Type=Application
+```
+
 ### Disable nixbld users from `SDDM`
 
 > Add /etc/sddm.conf.d/uid.conf with the following configuration
