@@ -8,6 +8,7 @@ sudo apt install stow
 sudo apt install build-essential # C++ compiler needed for neovim
 # https://github.com/dariuszd21/home-manager/issues/5
 sudo apt install swaylock # until `pam.so` issue will be resolved
+sudo apt install xdg-desktop-portal-wlr # for screensharing on Kubuntu 24.04 LTS
 ```
 
 ### Symlink configuration of `nix` and `home-manager` to `~/.config`
