@@ -140,17 +140,19 @@
   targets.genericLinux.enable = true;
 
   # Enable portals support
-  xdg.portal.enable = true;
-  xdg.portal.config = {
-    "common" = {
-      "default" = "gtk";
-      "org.freedesktop.impl.portal.ScreenCast" = "wlr";
-      "org.freedesktop.impl.portal.Screenshot" = "wlr";
-      # Probably to be replaced with KDE wallet, but we'll see
-      "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
+  xdg.portal = {
+    enable = true;
+    config = {
+      "common" = {
+        "default" = "gtk";
+        "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+        "org.freedesktop.impl.portal.Screenshot" = "wlr";
+        # Probably to be replaced with KDE wallet, but we'll see
+        "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
+      };
     };
+    configPackages = [ pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
   };
-  xdg.portal.extraPortals =
-    [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
 
 }

@@ -3,6 +3,13 @@
 {
   home.file = {
     ".config/swaync/style.css".source = ../dotfiles/swaync/style.css;
+    # Disable notifications during screensharing
+    ".config/xdg-desktop-portal-wlr/config".text = ''
+      [screencast]
+      exec_before=${pkgs.swaynotificationcenter}/bin/swaync-client --inhibitor-add "xdg-desktop-portal-wlr"
+      exec_after=${pkgs.swaynotificationcenter}/bin/swaync-client --inhibitor-remove "xdg-desktop-portal-wlr"
+      chooser_cmd=${pkgs.slurp} -f %o -or
+    '';
   };
 
   # Add notification daemon
