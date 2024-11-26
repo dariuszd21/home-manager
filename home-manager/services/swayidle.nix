@@ -14,8 +14,8 @@
       }
       {
         timeout = 905;
-        command = "swaymsg 'output * dpms off'";
-        resumeCommand = "swaymsg 'output * dpms on'";
+        command = "${config.lib.nixGL.wrap pkgs.sway}/bin/swaymsg 'output * dpms off'";
+        resumeCommand = "${config.lib.nixGL.wrap pkgs.sway}/bin/swaymsg 'output * dpms on'";
       }
     ];
   };

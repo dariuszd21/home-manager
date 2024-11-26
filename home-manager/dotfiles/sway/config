@@ -63,10 +63,6 @@ bindsym $mod+Print mode "$screenshot"
 set $screenshot_text 1 - window, 2 - screen, 3 - window clipboard, 4 - screen clipboard, 5 - swappy
 bindsym --release $mod+Print exec swayosd-client --custom-message "$screenshot_text"
 
-exec swayidle -w \
-	timeout 1800 'swaylock' \
-	timeout 1805 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
 set $lockman exec bash $HOME/.config/sway/lock.sh
 bindsym --to-code $mod+l exec $lockman 
 
