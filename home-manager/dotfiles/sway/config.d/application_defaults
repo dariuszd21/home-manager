@@ -31,10 +31,10 @@ assign [app_id="Slack"] 3
 for_window [instance="^slack$"] floating enable
 
 # Spotify
-assign [instance="^spotify$"] 3
-for_window [instance="^spotify$"] floating enable
-assign [title="^Spotify$"] 3
-for_window [title="^Spotify$"] floating enable
+assign [app_id="^spotify$"] 3
+for_window [app_id="^spotify$"] floating enable
+assign [title="^Spotify"] 3
+for_window [title="^Spotify"] floating enable
 
 #Origin
 for_window [instance="origin.exe"] floating enable
