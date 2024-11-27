@@ -10,12 +10,15 @@
     timeouts = [
       {
         timeout = 900;
-        command = "swaylock";
+        # to be fixed by https://github.com/dariuszd21/home-manager/issues/5
+        command = "/usr/bin/swaylock";
       }
       {
         timeout = 905;
-        command = "${config.lib.nixGL.wrap pkgs.sway}/bin/swaymsg 'output * dpms off'";
-        resumeCommand = "${config.lib.nixGL.wrap pkgs.sway}/bin/swaymsg 'output * dpms on'";
+        command =
+          "${config.lib.nixGL.wrap pkgs.sway}/bin/swaymsg 'output * dpms off'";
+        resumeCommand =
+          "${config.lib.nixGL.wrap pkgs.sway}/bin/swaymsg 'output * dpms on'";
       }
     ];
   };
