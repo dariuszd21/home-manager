@@ -57,3 +57,6 @@ for_window [title="htop"] floating enable, resize set width 50 ppt height 70 ppt
 for_window [title="Volume Control"] floating enable, resize set width 50 ppt height 70 ppt
 for_window [app_id="xsensors"] floating enable
 for_window [title="Save File"] floating enable
+
+# set floating for Thunderbird windows
+for_window [app_id="thunderbird-esr"] floating enable
