@@ -11,7 +11,7 @@
       {
         timeout = 900;
         # to be fixed by https://github.com/dariuszd21/home-manager/issues/5
-        command = "/usr/bin/swaylock";
+        command = "/usr/bin/swaylock -Ff";
       }
       {
         timeout = 905;
