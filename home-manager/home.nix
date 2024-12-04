@@ -35,8 +35,9 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     zig
-    fira-code-nerdfont
 
+    # Nerd font
+    nerd-fonts.fira-code
     # A generator for LS_COLORS with support for multiple color themes
     vivid
   ];
