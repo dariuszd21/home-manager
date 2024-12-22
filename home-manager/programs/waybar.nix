@@ -82,8 +82,8 @@
             "critical" = 15;
           };
           "format" = "{icon}  {capacity}%";
-          # "format-good": "", // An empty format will hide the module
-          # "format-full": "",
+          # "format-good" = ""; // An empty format will hide the module
+          "format-full" = "{icon}";
           "format-icons" = [ "" "" "" "" "" ];
         };
         "network" = {

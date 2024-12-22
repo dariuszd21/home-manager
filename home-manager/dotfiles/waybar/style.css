@@ -78,6 +78,13 @@ tooltip {
  * -------------------------------------------------------------------------- */
 
 
+#battery {
+    color: @yellow;
+    border-radius: 0 10px 10px 0;
+    margin-right: 10px;
+    border-left: 0px;
+}
+
 #battery.charging {
     color: @green;
 }
@@ -86,6 +93,14 @@ tooltip {
         color: #4c566a;
         background-color: @red;
     }
+}
+
+#battery.good:not(.charging) {
+    color: @peach;
+}
+
+#battery.warning:not(.charging) {
+    color: @maroon;
 }
 
 #battery.critical:not(.charging) {
@@ -176,13 +191,6 @@ tooltip {
 
 #pulseaudio.muted {
     color: @maroon;
-}
-
-#battery {
-    color: @teal;
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-    border-left: 0px;
 }
 
 #idle_inhibitor {
