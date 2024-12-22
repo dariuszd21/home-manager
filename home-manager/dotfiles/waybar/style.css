@@ -88,6 +88,11 @@ tooltip {
 #battery.charging {
     color: @green;
 }
+
+#battery.full {
+    color: @green;
+}
+
 @keyframes blink {
     to {
         color: #4c566a;
