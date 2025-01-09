@@ -34,6 +34,11 @@ output * bg '$HOME/.local/share/backgrounds/Toronto.jpg' fill
 output eDP-1 resolution 1920x1080@60Hz position 0,0
 # output DP-2 resolution 3840x2160@59.997Hz position 1920,0
 output DP-2 resolution 3840x2160@59.997Hz position 1940,0
+# output DP-1 resolution 3840x2160@59.997Hz position 1920,0
+output DP-1 resolution 3840x2160@59.997Hz position 1940,0
+
+# HDMI output configuration
+output HDMI-A-1 resolution 2560x1440@120.049Hz position 1940,0 adaptive_sync on
 
 # config for the other monitor
 #output DP-3 resolution 2560x1440@59.940Hz position 1930,0 adaptive_sync on
