@@ -97,6 +97,12 @@
       fi
       export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin
       export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
+      # Unset nixGL env variables
+      unset LIBVA_DRIVERS_PATH
+      unset LIBGL_DRIVERS_PATH
+      unset LD_LIBRARY_PATH
+      unset __EGL_VENDOR_LIBRARY_FILENAMES
     '';
 
     initExtra = ''

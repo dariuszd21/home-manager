@@ -19,7 +19,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel
+set $menu env -u LIBVA_DRIVERS_PATH -u LIBGL_DRIVERS_PATH -u LD_LIBRARY_PATH -u __EGL_VENDOR_LIBRARY_FILENAMES fuzzel
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)

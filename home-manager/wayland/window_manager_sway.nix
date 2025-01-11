@@ -16,6 +16,12 @@
 
     # enable systemd
     systemd.enable = true;
+    extraSessionCommands = ''
+      unset LIBVA_DRIVERS_PATH
+      unset LIBGL_DRIVERS_PATH
+      unset LD_LIBRARY_PATH
+      unset __EGL_VENDOR_LIBRARY_FILENAMES
+      '';
   };
 
   home.packages = with pkgs; [
