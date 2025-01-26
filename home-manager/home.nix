@@ -113,6 +113,7 @@
     ./services/swaync.nix
     ./services/swayosd.nix
     ./wayland/window_manager_sway.nix
+    ./themes/catppuccin.nix
   ] ++ lib.optional (builtins.pathExists ./personal/home.nix)
     ./personal/home.nix;
 
