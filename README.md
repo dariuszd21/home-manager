@@ -44,7 +44,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 ### Installing `home-manager` using existing configuration with flake support
 
 ```shell
-nix run home-manager/master -- switch
+nix run home-manager/master -- switch --flake '.?submodules=1'
 ```
 
 > If there are any conflicts with existing files you may need to rename them before installing
