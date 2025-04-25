@@ -105,7 +105,7 @@
       unset __EGL_VENDOR_LIBRARY_FILENAMES
     '';
 
-    initExtra = ''
+    initContent = ''
       typeset -g -A key
 
       key[Home]="''${terminfo[khome]}"
