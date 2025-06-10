@@ -33,7 +33,7 @@ output * bg '$HOME/.local/share/backgrounds/Toronto.jpg' fill
 
 output eDP-1 resolution 1920x1080@60Hz position 0,0
 # output DP-2 resolution 3840x2160@59.997Hz position 1920,0
-output DP-2 resolution 3840x2160@59.997Hz position 1940,0
+output DP-2 resolution 2560x1440@99.946Hz position 1940,1
 # output DP-1 resolution 3840x2160@59.997Hz position 1920,0
 output DP-1 resolution 3840x2160@59.997Hz position 1940,0
 
