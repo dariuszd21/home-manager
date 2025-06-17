@@ -23,7 +23,7 @@ set $menu env -u LIBVA_DRIVERS_PATH -u LIBGL_DRIVERS_PATH -u LD_LIBRARY_PATH -u 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg '$HOME/.local/share/backgrounds/Toronto.jpg' fill
+output * bg '$HOME/.local/share/backgrounds/2025-05-Trondheim-02759.jpg' fill
 #
 # Example configuration:
 #
