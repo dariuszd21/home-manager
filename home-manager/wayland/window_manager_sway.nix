@@ -7,6 +7,8 @@
       ../assets/backgrounds/Toronto.jpg;
     ".local/share/backgrounds/2025-05-Trondheim-02744.jpg".source =
       ../assets/backgrounds/2025-05-Trondheim-02744.jpg;
+    ".local/share/backgrounds/2025-05-Trondheim-02744_16_9.jpg".source =
+      ../assets/backgrounds/2025-05-Trondheim-02744_16_9.jpg;
     ".local/share/backgrounds/2025-05-Trondheim-02759.jpg".source =
       ../assets/backgrounds/2025-05-Trondheim-02759.jpg;
   };
