@@ -34,7 +34,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    zig
 
     # Nerd font
     nerd-fonts.fira-code
@@ -112,6 +111,7 @@
     ./services/swayidle.nix
     ./services/swaync.nix
     ./services/swayosd.nix
+    ./toolchains/zig.nix
     ./wayland/window_manager_sway.nix
   ] ++ lib.optional (builtins.pathExists ./personal/home.nix)
     ./personal/home.nix;
