@@ -1,11 +1,17 @@
 { config, pkgs, lib, ... }:
 
 {
+
+  home.sessionVariables = {
+    TERMINFO_DIRS = "${pkgs.alacritty.terminfo.outPath}/share/terminfo";
+  };
+
   # alacritty integration
   programs.alacritty = {
     enable = true;
     package = config.lib.nixGL.wrap pkgs.alacritty;
     settings = {
+      env = { TERM = "alacritty"; };
       general = { live_config_reload = true; };
       colors = {
         bright = {
