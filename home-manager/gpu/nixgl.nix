@@ -2,7 +2,9 @@
 
 {
   # Configure nixGL wrapper
-  nixGL.packages = pkgs.nixgl;
-  nixGL.defaultWrapper = "mesa";
-  nixGL.installScripts = [ "mesa" ];
+  targets.genericLinux.nixGL = {
+    packages = pkgs.nixgl;
+    defaultWrapper = "mesa";
+    installScripts = [ "mesa" ];
+  };
 }
