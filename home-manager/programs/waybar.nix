@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 
-  # add pavucontrol-qt for the bar
-  home.packages = with pkgs; [ lxqt.pavucontrol-qt ];
+  # add pavucontrol (PulseAudio Volume Control) for the bar
+  home.packages = with pkgs; [ pavucontrol ];
 
   home.file = {
     ".config/waybar/macchiato.css".source = ../dotfiles/waybar/macchiato.css;
@@ -110,7 +110,7 @@
             "car" = "";
             "default" = [ "" "" ];
           };
-          "on-click" = "${pkgs.lxqt.pavucontrol-qt}/bin/pavucontrol-qt";
+          "on-click"= "${lib.getExe pkgs.pavucontrol}";
         };
         "custom/notification" = {
           "tooltip" = false;
