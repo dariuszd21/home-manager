@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
 
@@ -23,8 +28,13 @@
         position = "top";
         mod = "dock";
         height = 0;
-        "modules-left" =
-          [ "clock" "cpu" "memory" "sway/workspaces" "sway/mode" ];
+        "modules-left" = [
+          "clock"
+          "cpu"
+          "memory"
+          "sway/workspaces"
+          "sway/mode"
+        ];
         "modules-center" = [ "sway/window" ];
         "modules-right" = [
           "tray"
@@ -35,8 +45,12 @@
           "network"
           "idle_inhibitor"
         ];
-        "sway/workspaces" = { "disable-scroll" = true; };
-        "sway/window" = { "format" = "{}"; };
+        "sway/workspaces" = {
+          "disable-scroll" = true;
+        };
+        "sway/window" = {
+          "format" = "{}";
+        };
 
         "idle_inhibitor" = {
           "format" = "{icon} ";
@@ -57,23 +71,20 @@
         };
         "cpu" = {
           "format" = " {usage}%";
-          "on-click" = "${
-              config.lib.nixGL.wrap pkgs.alacritty
-            }/bin/alacritty -T htop -e htop";
+          "on-click" = "${config.lib.nixGL.wrap pkgs.alacritty}/bin/alacritty -T htop -e htop";
         };
         "memory" = {
           "format" = " {}%";
-          "on-click" = "${
-              config.lib.nixGL.wrap pkgs.alacritty
-            }/bin/alacritty -T htop -e htop";
+          "on-click" = "${config.lib.nixGL.wrap pkgs.alacritty}/bin/alacritty -T htop -e htop";
         };
         "backlight" = {
           "format" = "{icon} {percent}%";
-          "format-icons" = [ "" "" ];
-          "on-scroll-down" =
-            "${pkgs.swayosd}/bin/swayosd-client --brightness lower";
-          "on-scroll-up" =
-            "${pkgs.swayosd}/bin/swayosd-client --brightness raise";
+          "format-icons" = [
+            ""
+            ""
+          ];
+          "on-scroll-down" = "${pkgs.swayosd}/bin/swayosd-client --brightness lower";
+          "on-scroll-up" = "${pkgs.swayosd}/bin/swayosd-client --brightness raise";
         };
         "battery" = {
           "states" = {
@@ -84,7 +95,13 @@
           "format" = "{icon}  {capacity}%";
           # "format-good" = ""; // An empty format will hide the module
           "format-full" = "{icon} ";
-          "format-icons" = [ "" "" "" "" "" ];
+          "format-icons" = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         "network" = {
           # "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -92,9 +109,7 @@
           "format-wifi" = " {essid}";
           "format-ethernet" = " {ifname}: {ipaddr}/{cidr}";
           "format-disconnected" = "⚠ Disconnected";
-          "on-click" = "${
-              config.lib.nixGL.wrap pkgs.alacritty
-            }/bin/alacritty -T nmtui -e nmtui";
+          "on-click" = "${config.lib.nixGL.wrap pkgs.alacritty}/bin/alacritty -T nmtui -e nmtui";
         };
         "pulseaudio" = {
           "scroll-step" = 5;
@@ -108,9 +123,12 @@
             "phone" = "";
             "portable" = "";
             "car" = "";
-            "default" = [ "" "" ];
+            "default" = [
+              ""
+              ""
+            ];
           };
-          "on-click"= "${lib.getExe pkgs.pavucontrol}";
+          "on-click" = "${lib.getExe pkgs.pavucontrol}";
         };
         "custom/notification" = {
           "tooltip" = false;
@@ -120,20 +138,16 @@
             "none" = "";
             "dnd-notification" = "<span foreground='red'><sup></sup></span>";
             "dnd-none" = "";
-            "inhibited-notification" =
-              "<span foreground='red'><sup></sup></span>";
+            "inhibited-notification" = "<span foreground='red'><sup></sup></span>";
             "inhibited-none" = "";
-            "dnd-inhibited-notification" =
-              "<span foreground='red'><sup></sup></span>";
+            "dnd-inhibited-notification" = "<span foreground='red'><sup></sup></span>";
             "dnd-inhibited-none" = "";
           };
           "return-type" = "json";
           "exec-if" = "which ${pkgs.swaynotificationcenter}/bin/swaync-client";
           "exec" = "${pkgs.swaynotificationcenter}/bin/swaync-client -swb";
-          "on-click" =
-            "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
-          "on-click-right" =
-            "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
+          "on-click" = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
+          "on-click-right" = "${pkgs.swaynotificationcenter}/bin/swaync-client -d -sw";
           "escape" = true;
         };
       };
