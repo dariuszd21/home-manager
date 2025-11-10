@@ -89,6 +89,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./customization/gtk.nix
     ./gpu/nixgl.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
