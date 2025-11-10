@@ -2,14 +2,18 @@
 
 {
   # Add bat with Cattpuccin theme and extras
-  home.file = { ".config/bat/themes".source = ../dotfiles/bat/themes; };
+  home.file = {
+    ".config/bat/themes".source = ../dotfiles/bat/themes;
+  };
   programs.bat = {
     enable = true;
-    config = { theme = "Catppuccin Macchiato"; };
+    config = {
+      theme = "Catppuccin Macchiato";
+    };
     extraPackages = with pkgs.bat-extras; [
       batdiff
       batman
-      # batgrep
+      batgrep
       batpipe
       batwatch
     ];
