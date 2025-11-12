@@ -5,7 +5,7 @@
   programs.git = {
     enable = true;
     settings = {
-      aliases = {
+      alias = {
         last = "log -1 --stat";
         cleanup = "!git branch --merged | grep  -v '\\*\\|main\\|develop' | xargs -n 1 git branch -d";
         cs = "commit --signoff --gpg-sign";
