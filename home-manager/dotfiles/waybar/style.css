@@ -14,7 +14,13 @@
 }
 
 tooltip {
-    background: @overlay0;
+    background: transparent;
+    color: @text;
+}
+
+tooltip label {
+    background: @base;
+    padding: 5px;
     border-radius: 10px;
     border-width: 2px;
     border-style: solid;
@@ -46,7 +52,7 @@ tooltip {
 
 #workspaces button:hover {
     color: @mantle;
-	background: @overlay0;
+    background: @overlay0;
     border-radius: 10px;
 }
 
