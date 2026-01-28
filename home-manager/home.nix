@@ -90,6 +90,7 @@
 
   imports = [
     ./customization/gtk.nix
+    ./development/copilot.nix
     ./gpu/nixgl.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
