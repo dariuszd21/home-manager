@@ -13,7 +13,7 @@
       "copilot-language-server"
     ];
   home.packages = with pkgs; [
-    nodePackages.nodejs
+    nodejs-slim
     copilot-language-server
   ];
 }
