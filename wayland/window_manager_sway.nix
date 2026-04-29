@@ -34,7 +34,6 @@
     swappy
     slurp
     wl-clipboard
-    thunar
   ];
 
   # Swaylock may be problematic due to pam configuration
