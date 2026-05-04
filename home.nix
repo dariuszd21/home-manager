@@ -99,6 +99,7 @@
     ./programs/fuzzel.nix
     ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/keepassxc.nix
     ./programs/pyenv.nix
     ./programs/ripgrep.nix
     ./programs/starship.nix
