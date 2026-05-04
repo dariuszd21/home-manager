@@ -103,6 +103,7 @@
     ./programs/pyenv.nix
     ./programs/ripgrep.nix
     ./programs/starship.nix
+    ./programs/thunderbird.nix
     ./programs/tmux.nix
     ./programs/waybar.nix
     ./programs/zoxide.nix
