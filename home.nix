@@ -93,6 +93,7 @@
     ./development/copilot.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
+    ./programs/chromium.nix
     ./programs/eza.nix
     ./programs/fd.nix
     ./programs/fuzzel.nix
