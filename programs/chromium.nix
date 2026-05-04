@@ -6,5 +6,10 @@
 }:
 
 {
-  programs.chromium.enable = true;
+  programs.chromium = {
+    enable = true;
+    nativeMessagingHosts = [
+      pkgs.keepassxc
+    ];
+  };
 }
