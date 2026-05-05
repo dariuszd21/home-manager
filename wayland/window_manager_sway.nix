@@ -16,8 +16,6 @@
   # sway integration
   wayland.windowManager.sway = {
     enable = true;
-    package = config.lib.nixGL.wrap pkgs.sway;
-
     swaynag = { enable = true; };
 
     # enable systemd
@@ -36,7 +34,6 @@
     swappy
     slurp
     wl-clipboard
-    thunar
   ];
 
   # Swaylock may be problematic due to pam configuration

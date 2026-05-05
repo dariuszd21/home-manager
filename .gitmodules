@@ -1,6 +1,6 @@
-[submodule "home-manager/dotfiles/nvim-config"]
-	path = home-manager/dotfiles/nvim-config
+[submodule "dotfiles/nvim-config"]
+	path = dotfiles/nvim-config
 	url = https://github.com/dariuszd21/nvim-config
-[submodule "home-manager/personal"]
-	path = home-manager/personal
+[submodule "personal"]
+	path = personal
 	url = git@github.com:dariuszd21/personal-home-manager.git

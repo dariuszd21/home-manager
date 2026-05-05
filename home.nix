@@ -51,7 +51,7 @@
     ".config/nvim".source = ./dotfiles/nvim-config;
     ".config/nvim-playground" = {
       source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/git/home-manager/home-manager/dotfiles/nvim-config";
+        "${config.home.homeDirectory}/git/nixos-config/home-manager/dotfiles/nvim-config";
     };
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
 
@@ -91,18 +91,19 @@
   imports = [
     ./customization/gtk.nix
     ./development/copilot.nix
-    ./gpu/nixgl.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
+    ./programs/chromium.nix
     ./programs/eza.nix
     ./programs/fd.nix
     ./programs/fuzzel.nix
     ./programs/fzf.nix
     ./programs/git.nix
-    ./programs/neovim.nix
+    ./programs/keepassxc.nix
     ./programs/pyenv.nix
     ./programs/ripgrep.nix
     ./programs/starship.nix
+    ./programs/thunderbird.nix
     ./programs/tmux.nix
     ./programs/waybar.nix
     ./programs/zoxide.nix
@@ -138,9 +139,6 @@
 
   # Enable management of XDG base directories.
   xdg.enable = true;
-
-  # make Home Manager work better on GNU/Linux distributions other than NixOS.
-  targets.genericLinux.enable = true;
 
   # Enable portals support
   xdg.portal = {
