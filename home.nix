@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -50,8 +55,7 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = ./dotfiles/nvim-config;
     ".config/nvim-playground" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/git/nixos-config/home-manager/dotfiles/nvim-config";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/git/nixos-config/home-manager/dotfiles/nvim-config";
     };
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
 
@@ -100,6 +104,7 @@
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/keepassxc.nix
+    ./programs/neovim.nix
     ./programs/pyenv.nix
     ./programs/ripgrep.nix
     ./programs/starship.nix
@@ -116,8 +121,8 @@
     ./services/swayosd.nix
     ./toolchains/zig.nix
     ./wayland/window_manager_sway.nix
-  ] ++ lib.optional (builtins.pathExists ./personal/home.nix)
-    ./personal/home.nix;
+  ]
+  ++ lib.optional (builtins.pathExists ./personal/home.nix) ./personal/home.nix;
 
   # WezTerm integration
   programs.wezterm = {
@@ -153,7 +158,10 @@
       };
     };
     configPackages = [ pkgs.xdg-desktop-portal-wlr ];
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
   };
 
 }
