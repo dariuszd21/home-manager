@@ -1,5 +1,10 @@
 ## Installation
 
+### Flake
+
+Flake in this repository may be used to install this to non-NixOS system.
+To use it with NixOS, simply import just `home.nix` directly from NixOS setup.
+
 ### Dependencies
 
 ```shell
@@ -17,7 +22,8 @@ sudo apt install xdg-desktop-portal-wlr # for screensharing on Kubuntu 24.04 LTS
 > for further installation.
 
 ```shell
-stow -t ~/.config .
+mkdir ~/.config/nix
+stow -t ~/.config/nix/ nix
 ```
 ### __*Optional*__ add a separate BTRFS subvolume for `Nix` store
 
@@ -86,16 +92,16 @@ HideShells=/usr/bin/nologin,/sbin/nologin,/bin/false,/usr/bin/git-shell
 
 ### Updating packages state
 
-> It has to be run in `~/.config/home-manager` directory
+> It has to be run in `home-manager` directory
 
 ```shell
 nix flake update
 ```
 
-### Updating home-manager configuration
+### Updating home-manager packages
 
 ```shell
-home-manager switch
+home-manager switch --flake '.?submodules=1'
 ```
 
 ### Garbage collect old packages
@@ -111,4 +117,4 @@ nix store gc
 
 ## Disclaimers
 
-Tested and used on Kubuntu 24.04 LTS
+Tested and used on Kubuntu 26.04 LTS and NixOS 26.05
