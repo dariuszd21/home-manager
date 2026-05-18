@@ -102,6 +102,7 @@
     ./programs/fd.nix
     ./programs/fuzzel.nix
     ./programs/fzf.nix
+    ./programs/gcc.nix
     ./programs/git.nix
     ./programs/keepassxc.nix
     ./programs/neovim.nix
