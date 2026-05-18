@@ -6,8 +6,17 @@
 }:
 
 {
+  # disable sway config generation until migrated
+  xdg.configFile."sway/config".enable = false;
+
   home.file = {
-    ".config/sway".source = ../dotfiles/sway;
+    ".config/sway/config".source = ../dotfiles/sway/config;
+    ".config/sway/catppuccin-macchiato".source = ../dotfiles/sway/catppuccin-macchiato;
+    ".config/sway/lock.sh".source = ../dotfiles/sway/lock.sh;
+    ".config/sway/config.d/application_defaults".source = ../dotfiles/sway/config.d/application_defaults;
+    ".config/sway/config.d/autostart_applications".source = ../dotfiles/sway/config.d/autostart_applications;
+    ".config/sway/config.d/theme".source = ../dotfiles/sway/config.d/theme;
+    ".config/sway/config.d/xdg-desktop-portal".source = ../dotfiles/sway/config.d/xdg-desktop-portal;
     ".local/share/backgrounds/Toronto.jpg".source = ../assets/backgrounds/Toronto.jpg;
     ".local/share/backgrounds/2025-05-Trondheim-02744.jpg".source =
       ../assets/backgrounds/2025-05-Trondheim-02744.jpg;
