@@ -8,20 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixGL = {
-      url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixGL, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nixGL.overlay ];
       };
-      nixgl = import nixGL;
     in {
       homeConfigurations."dariuszd" =
         home-manager.lib.homeManagerConfiguration {
@@ -36,7 +30,7 @@
 
           # Optionally use extraSpecialArgs
           # to pass through arguments to home.nix
-          extraSpecialArgs = { nixgl = nixgl; };
+          extraSpecialArgs = { };
         };
     };
 }

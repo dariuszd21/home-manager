@@ -128,7 +128,7 @@
   # WezTerm integration
   programs.wezterm = {
     enable = true;
-    package = config.lib.nixGL.wrap pkgs.wezterm;
+    package = pkgs.wezterm;
     extraConfig = ''
       local config = {}
 

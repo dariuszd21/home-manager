@@ -32,7 +32,6 @@
     swaynag = {
       enable = true;
     };
-    package = config.lib.nixGL.wrap pkgs.sway;
 
     # enable systemd
     systemd.enable = true;
