@@ -5,6 +5,7 @@
   programs.zsh = {
     enable = true;
     enableVteIntegration = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     autocd = true;
     history.append = true;
     autosuggestion = {

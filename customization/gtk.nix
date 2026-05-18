@@ -5,6 +5,7 @@
     gtk = {
       enable = true;
       colorScheme = "light";
+      gtk4.theme = null;
 
       theme = {
         name = "catppuccin-latte-sky-standard";
