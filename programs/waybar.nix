@@ -20,7 +20,7 @@
     enable = true;
     systemd = {
       enable = true;
-      target = "sway-session.target";
+      targets = [ "sway-session.target" ];
     };
     settings = {
       mainBar = {
