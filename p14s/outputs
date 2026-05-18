@@ -1,0 +1,22 @@
+output eDP-1 resolution 3072x1920@60Hz position 0,0 scale 1.5 adaptive_sync on
+output DP-1 resolution 3840x2160@59.997Hz position 3100,0
+
+# HDMI output configuration
+output HDMI-A-1 resolution 2560x1440@120.049Hz position 1940,0 adaptive_sync on
+
+set $output-primary DP-1
+set $output-secondary eDP-1
+
+# workspace to displays
+workspace 1 output $output-secondary
+workspace 3 output $output-secondary
+workspace 5 output $output-secondary
+workspace 7 output $output-secondary
+workspace 9 output $output-secondary
+
+workspace 2 output $output-primary
+workspace 4 output $output-primary
+workspace 6 output $output-primary
+workspace 8 output $output-primary
+workspace 10 output $output-primary
+
