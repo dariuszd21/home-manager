@@ -1,10 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   home.file = {
     ".config/sway".source = ../dotfiles/sway;
-    ".local/share/backgrounds/Toronto.jpg".source =
-      ../assets/backgrounds/Toronto.jpg;
+    ".local/share/backgrounds/Toronto.jpg".source = ../assets/backgrounds/Toronto.jpg;
     ".local/share/backgrounds/2025-05-Trondheim-02744.jpg".source =
       ../assets/backgrounds/2025-05-Trondheim-02744.jpg;
     ".local/share/backgrounds/2025-05-Trondheim-02744_16_9.jpg".source =
@@ -16,9 +20,10 @@
   # sway integration
   wayland.windowManager.sway = {
     enable = true;
+    swaynag = {
+      enable = true;
+    };
     package = config.lib.nixGL.wrap pkgs.sway;
-
-    swaynag = { enable = true; };
 
     # enable systemd
     systemd.enable = true;
@@ -27,7 +32,7 @@
       unset LIBGL_DRIVERS_PATH
       unset LD_LIBRARY_PATH
       unset __EGL_VENDOR_LIBRARY_FILENAMES
-      '';
+    '';
   };
 
   home.packages = with pkgs; [

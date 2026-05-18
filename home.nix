@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -50,8 +55,7 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = ./dotfiles/nvim-config;
     ".config/nvim-playground" = {
-      source = config.lib.file.mkOutOfStoreSymlink
-        "${config.home.homeDirectory}/git/home-manager/home-manager/dotfiles/nvim-config";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/git/nixos-config/home-manager/dotfiles/nvim-config";
     };
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
 
@@ -91,18 +95,21 @@
   imports = [
     ./customization/gtk.nix
     ./development/copilot.nix
-    ./gpu/nixgl.nix
     ./programs/alacritty.nix
     ./programs/bat.nix
+    ./programs/chromium.nix
     ./programs/eza.nix
     ./programs/fd.nix
     ./programs/fuzzel.nix
     ./programs/fzf.nix
+    ./programs/gcc.nix
     ./programs/git.nix
+    ./programs/keepassxc.nix
     ./programs/neovim.nix
     ./programs/pyenv.nix
     ./programs/ripgrep.nix
     ./programs/starship.nix
+    ./programs/thunderbird.nix
     ./programs/tmux.nix
     ./programs/waybar.nix
     ./programs/zoxide.nix
@@ -115,8 +122,8 @@
     ./services/swayosd.nix
     ./toolchains/zig.nix
     ./wayland/window_manager_sway.nix
-  ] ++ lib.optional (builtins.pathExists ./personal/home.nix)
-    ./personal/home.nix;
+  ]
+  ++ lib.optional (builtins.pathExists ./personal/home.nix) ./personal/home.nix;
 
   # WezTerm integration
   programs.wezterm = {
@@ -139,9 +146,6 @@
   # Enable management of XDG base directories.
   xdg.enable = true;
 
-  # make Home Manager work better on GNU/Linux distributions other than NixOS.
-  targets.genericLinux.enable = true;
-
   # Enable portals support
   xdg.portal = {
     enable = true;
@@ -155,7 +159,10 @@
       };
     };
     configPackages = [ pkgs.xdg-desktop-portal-wlr ];
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
   };
 
 }

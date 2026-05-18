@@ -33,9 +33,9 @@ output * bg '$HOME/.local/share/backgrounds/2025-05-Trondheim-02744_16_9.jpg' fi
 
 output eDP-1 resolution 1920x1080@60Hz position 0,0
 # output DP-2 resolution 3840x2160@59.997Hz position 1920,0
-output DP-2 resolution 2560x1440@99.946Hz position 1940,1
+# output DP-2 resolution 2560x1440@99.946Hz position 3100,1
 # output DP-1 resolution 3840x2160@59.997Hz position 1920,0
-output DP-1 resolution 3840x2160@59.997Hz position 1940,0
+output DP-1 resolution 3840x2160@59.997Hz position 3100,0
 
 # HDMI output configuration
 output HDMI-A-1 resolution 2560x1440@120.049Hz position 1940,0 adaptive_sync on
