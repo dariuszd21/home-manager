@@ -1,3 +1,9 @@
+output eDP-1 resolution 3072x1920@60Hz position 0,0 scale 1.5 adaptive_sync on
+output DP-1 resolution 3840x2160@59.997Hz position 3100,0
+
+# HDMI output configuration
+output HDMI-A-1 resolution 2560x1440@120.049Hz position 1940,0 adaptive_sync on
+
 set $output-primary DP-1
 set $output-secondary eDP-1
 

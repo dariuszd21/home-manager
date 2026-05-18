@@ -6,6 +6,11 @@
 }:
 
 {
+
+  home.file = {
+    ".config/sway/config.d/outputs".source = ./dotfiles/sway_output/outputs;
+  };
+
   imports = [
     ./gpu/nixgl.nix
   ];
