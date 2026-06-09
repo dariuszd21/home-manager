@@ -92,6 +92,13 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "copilot-language-server"
+      "vscode"
+    ];
+
   imports = [
     ./customization/gtk.nix
     ./development/copilot.nix
@@ -112,6 +119,7 @@
     ./programs/thunderbird.nix
     ./programs/tmux.nix
     ./programs/waybar.nix
+    ./programs/vscode.nix
     ./programs/zoxide.nix
     ./programs/zsh.nix
     ./services/gnome-keyring.nix
