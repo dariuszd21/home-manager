@@ -16,6 +16,7 @@
       batgrep
       batpipe
       batwatch
+      prettybat
     ];
   };
 
