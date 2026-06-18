@@ -54,9 +54,6 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = ./dotfiles/nvim-config;
-    ".config/nvim-playground" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/git/nixos-config/home-manager/dotfiles/nvim-config";
-    };
     ".config/tmux/scripts".source = ./dotfiles/tmux/scripts;
 
     # # You can also set the file content immediately.
@@ -64,6 +61,14 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+  };
+
+  xdg = {
+    configFile = {
+      "nvim-playground" = {
+        source = config.lib.file.mkOutOfStoreSymlink "./dotfiles/nvim-config";
+      };
+    };
   };
 
   # Home Manager can also manage your environment variables through
