@@ -128,15 +128,11 @@
     ./programs/starship.nix
     ./programs/thunderbird.nix
     ./programs/tmux.nix
-    ./programs/waybar.nix
     ./programs/vscode.nix
     ./programs/zoxide.nix
     ./programs/zsh.nix
     ./services/gnome-keyring.nix
     ./services/ssh-agent.nix
-    ./services/swayidle.nix
-    ./services/swaync.nix
-    ./services/swayosd.nix
     ./toolchains/zig.nix
   ]
   ++ lib.optional (builtins.pathExists ./personal/home.nix) ./personal/home.nix;
