@@ -133,13 +133,11 @@
     ./programs/zoxide.nix
     ./programs/zsh.nix
     ./services/gnome-keyring.nix
-    ./services/network-manager-applet.nix
     ./services/ssh-agent.nix
     ./services/swayidle.nix
     ./services/swaync.nix
     ./services/swayosd.nix
     ./toolchains/zig.nix
-    ./wayland/window_manager_sway.nix
   ]
   ++ lib.optional (builtins.pathExists ./personal/home.nix) ./personal/home.nix;
 
