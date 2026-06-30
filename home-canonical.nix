@@ -71,6 +71,11 @@
     };
   };
 
+  systemd.user.sessionVariables = {
+    EDITOR = "nvim";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  };
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
