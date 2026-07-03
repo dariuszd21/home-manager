@@ -6,6 +6,8 @@
     enable = true;
 
     settings = {
+      # Go snap seems to timeout in 500ms, so extending that a bit
+      command_timeout = 3000;
       # Sets user-defined palette
       palette = "catppuccin_macchiato";
 
