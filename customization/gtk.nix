@@ -5,16 +5,16 @@
     gtk = {
       enable = true;
       colorScheme = "light";
-      gtk4.theme = null;
+      gtk4.enable = false;
 
-      theme = {
-        name = "catppuccin-latte-sky-standard";
-        package = pkgs.catppuccin-gtk.override {
-          accents = [ "sky" ];
-          size = "standard";
-          variant = "latte";
-        };
-      };
+      # theme = {
+        # name = "catppuccin-latte-sky-standard";
+        # package = pkgs.catppuccin-gtk.override {
+        #   accents = [ "sky" ];
+        #   size = "standard";
+        #   variant = "latte";
+        # };
+      # };
       iconTheme = {
         name = "Papirus";
         package = pkgs.papirus-icon-theme;
