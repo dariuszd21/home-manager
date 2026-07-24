@@ -66,7 +66,7 @@
   xdg = {
     configFile = {
       "nvim-playground" = {
-        source = config.lib.file.mkOutOfStoreSymlink "./dotfiles/nvim-config";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/git/home-manager/dotfiles/nvim-config";
       };
     };
   };
