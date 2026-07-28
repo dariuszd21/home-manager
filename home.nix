@@ -133,6 +133,10 @@
     ./services/swayidle.nix
     ./services/swaync.nix
     ./services/swayosd.nix
+    ./toolchains/clang.nix
+    ./toolchains/go.nix
+    ./toolchains/lua.nix
+    ./toolchains/yaml.nix
     ./toolchains/zig.nix
     ./wayland/window_manager_sway.nix
   ]

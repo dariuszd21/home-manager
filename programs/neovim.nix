@@ -8,8 +8,10 @@
     defaultEditor = true;
     withPython3 = false;
     withRuby = false;
-    extraPackages = with pkgs; [ tree-sitter sqlite ];
+    extraPackages = with pkgs; [
+      sqlite
+      tree-sitter
+    ];
   };
 
 }
-

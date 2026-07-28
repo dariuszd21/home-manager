@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    zig
-    zls
+    golangci-lint
+    golangci-lint-langserver
   ];
 }

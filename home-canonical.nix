@@ -133,6 +133,10 @@
     ./programs/zsh.nix
     ./services/gnome-keyring.nix
     ./services/ssh-agent.nix
+    ./toolchains/clang.nix
+    ./toolchains/go.nix
+    ./toolchains/lua.nix
+    ./toolchains/yaml.nix
     ./toolchains/zig.nix
   ]
   ++ lib.optional (builtins.pathExists ./personal/home.nix) ./personal/home.nix;
