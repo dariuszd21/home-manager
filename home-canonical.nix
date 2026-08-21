@@ -70,9 +70,9 @@
       };
       "containers/storage.conf" = {
         text = ''
-        [storage]
-        driver = "overlay"
-        graphroot = "${config.xdg.dataHome}/containers/storage"
+          [storage]
+          driver = "overlay"
+          graphroot = "${config.xdg.dataHome}/containers/storage"
         '';
       };
     };
