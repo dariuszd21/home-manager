@@ -68,6 +68,13 @@
       "nvim-playground" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/git/home-manager/dotfiles/nvim-config";
       };
+      "containers/storage.conf" = {
+        text = ''
+        [storage]
+        driver = "overlay"
+        graphroot = "${config.xdg.dataHome}/containers/storage"
+        '';
+      };
     };
   };
 
