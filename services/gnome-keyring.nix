@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ gcr ];
+  home.packages = with pkgs; [ gcr_3 ];
 
   # Add gnome-keyring daemon
   services.gnome-keyring = {
